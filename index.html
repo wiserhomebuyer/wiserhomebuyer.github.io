@@ -168,22 +168,21 @@
                     <div class="calc-container">
                         <form action="" id="monthly-payment-form">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control comma" id="home-price" placeholder="$240,000"
-                                    value="500000" required>
+                                <input type="text" class="form-control comma" id="home-price" placeholder="$240,000" required>
                                 <label for="home-price">Home Price</label>
                             </div>
                             <div class="row">
                                 <div class="col-7">
                                     <div class="form-floating mb-3">
                                         <input type="text" class="form-control" id="down-payment" placeholder="$48,000"
-                                            value="100000" required>
+                                             required>
                                         <label for="down-payment">Down Payment</label>
                                     </div>
                                 </div>
                                 <div class="col-5">
                                     <div class="mb-3 form-floating">
                                         <input type="text" class="form-control" id="down-payment-percentage"
-                                            placeholder="20%" value="20">
+                                            placeholder="20" >
                                         <label for="down-payment-percentage">
                                             % Down</label>
                                     </div>
@@ -204,7 +203,7 @@
                                 <div class="col-5">
                                     <div class="mb-3 form-floating">
                                         <input type="text" class="form-control" id="interest-rate" placeholder="6.015%"
-                                            value="6.234" required>
+                                             required>
                                         <label for="interest-rate">Interest Rate</label>
                                         <!-- People are likely coming to see what they can expect for an interest rate. We need to calculate this somehow. It looks like the others are calculating based on credit score -->
                                     </div>
@@ -220,7 +219,7 @@
                             <div id="taxes-fees-container" class="d-none taxes-fees-container">
                                 <div class="form-floating mb-3">
                                     <input type="text" class="form-control" id="property-tax" placeholder="$4,000"
-                                        value="3750">
+                                        >
                                     <label for="property-tax">Property Tax (Yearly)</label>
                                     <!-- 
                                         Store average property tax for states, counties, and cities in db  to calculate this. Or pull from external source 
@@ -229,16 +228,16 @@
                                 </div>
                                 <div class="form-floating mb-3">
                                     <input type="text" class="form-control" id="home-insurance" placeholder="$1,050"
-                                        value="1000">
+                                        >
                                     <label for="home-insurance">Home Insurance (Yearly)</label>
                                 </div>
                                 <div class="form-floating mb-3">
                                     <input type="text" class="form-control" id="mortgage-insurance" placeholder="$0"
-                                        value="0">
+                                        >
                                     <label for="mortgage-insurance">Mortgage Insurance (Monthly)</label>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="hoa" placeholder="$0" value="132">
+                                    <input type="text" class="form-control" id="hoa" placeholder="$0">
                                     <label for="hoa">Homeowners Association (Monthly)</label>
                                 </div>
                             </div>
@@ -280,7 +279,7 @@
                     <div class="calc-container">
                         <form action="" id="purchase-budget-form">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="income" placeholder="$57,000" value="150000"
+                                <input type="text" class="form-control" id="income" placeholder="$57,000"
                                     required>
                                 <label for="income">Yearly Income (Pretax)</label>
                             </div>
@@ -290,7 +289,7 @@
                             </div>
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="budget-down" placeholder="$48,000"
-                                    value="100000" required>
+                                     required>
                                 <label for="budget-down">Down Payment</label>
                             </div>
                             <div class="row">
@@ -308,7 +307,7 @@
                                 <div class="col-5">
                                     <div class="mb-3 form-floating">
                                         <input type="text" class="form-control" id="budget-interest-rate"
-                                            placeholder="6.015%" value="6.234" required>
+                                            placeholder="6.015%" required>
                                         <label for="budget-interest-rate">Interest Rate</label>
                                         <!-- People are likely coming to see what they can expect for an interest rate. We need to calculate this somehow. It looks like the others are calculating based on credit score -->
                                     </div>
@@ -317,7 +316,7 @@
 
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="budget-property-tax" placeholder="$4,000"
-                                    value="3750">
+                                    >
                                 <label for="budget-property-tax">Property Tax (Yearly)</label>
                                 <!-- 
                                     Store average property tax for states, counties, and cities in db to calculate this. Or pull from external source 
@@ -326,7 +325,7 @@
                             </div>
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="budget-home-insurance" placeholder="$1,050"
-                                    value="1000">
+                                    >
                                 <label for="budget-home-insurance">Home Insurance (Yearly)</label>
                             </div>
                             <div class="form-floating mb-3">
@@ -335,7 +334,7 @@
                                 <label for="budget-mortgage-insurance">Mortgage Insurance (Monthly)</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="budget-hoa" placeholder="$0" value="132">
+                                <input type="text" class="form-control" id="budget-hoa" placeholder="$0">
                                 <label for="budget-hoa">Homeowners Association (Monthly)</label>
                             </div>
                             <div class="d-grid gap-2">
@@ -474,7 +473,7 @@
                                 <div class="col-5">
                                     <div class="mb-3 form-floating">
                                         <input type="text" class="form-control" id="compare-interest-rate"
-                                            placeholder="6.015%" value="6.234" required>
+                                            placeholder="6.015%" required>
                                         <label for="interest-rate">Interest Rate</label>
                                     </div>
                                 </div>
@@ -487,7 +486,7 @@
                             <div id="compare-taxes-fees-container" class="d-none taxes-fees-container">
                                 <div class="form-floating mb-3">
                                     <input type="text" class="form-control" id="compare-property-tax"
-                                        placeholder="$4,000" value="3750">
+                                        placeholder="$4,000" >
                                     <label for="compare-property-tax">Property Tax (Yearly)</label>
                                     <!-- 
                                         Store average property tax for states, counties, and cities in db  to calculate this. Or pull from external source 
@@ -496,7 +495,7 @@
                                 </div>
                                 <div class="form-floating mb-3">
                                     <input type="text" class="form-control" id="compare-home-insurance"
-                                        placeholder="$1,050" value="1000">
+                                        placeholder="$1,050">
                                     <label for="compare-home-insurance">Home Insurance (Yearly)</label>
                                 </div>
                                 <div class="form-floating mb-3">
