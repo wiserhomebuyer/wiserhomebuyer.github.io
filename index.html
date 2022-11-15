@@ -168,21 +168,22 @@
                     <div class="calc-container">
                         <form action="" id="monthly-payment-form">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control comma" id="home-price" placeholder="$240,000" required>
+                                <input type="text" class="form-control comma" id="home-price" placeholder="$240,000"
+                                    required>
                                 <label for="home-price">Home Price</label>
                             </div>
                             <div class="row">
                                 <div class="col-7">
                                     <div class="form-floating mb-3">
                                         <input type="text" class="form-control" id="down-payment" placeholder="$48,000"
-                                             required>
+                                            required>
                                         <label for="down-payment">Down Payment</label>
                                     </div>
                                 </div>
                                 <div class="col-5">
                                     <div class="mb-3 form-floating">
                                         <input type="text" class="form-control" id="down-payment-percentage"
-                                            placeholder="20" >
+                                            placeholder="20">
                                         <label for="down-payment-percentage">
                                             % Down</label>
                                     </div>
@@ -203,7 +204,7 @@
                                 <div class="col-5">
                                     <div class="mb-3 form-floating">
                                         <input type="text" class="form-control" id="interest-rate" placeholder="6.015%"
-                                             required>
+                                            required>
                                         <label for="interest-rate">Interest Rate</label>
                                         <!-- People are likely coming to see what they can expect for an interest rate. We need to calculate this somehow. It looks like the others are calculating based on credit score -->
                                     </div>
@@ -218,8 +219,7 @@
 
                             <div id="taxes-fees-container" class="d-none taxes-fees-container">
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="property-tax" placeholder="$4,000"
-                                        >
+                                    <input type="text" class="form-control" id="property-tax" placeholder="$4,000">
                                     <label for="property-tax">Property Tax (Yearly)</label>
                                     <!-- 
                                         Store average property tax for states, counties, and cities in db  to calculate this. Or pull from external source 
@@ -227,13 +227,11 @@
                                     -->
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="home-insurance" placeholder="$1,050"
-                                        >
+                                    <input type="text" class="form-control" id="home-insurance" placeholder="$1,050">
                                     <label for="home-insurance">Home Insurance (Yearly)</label>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="mortgage-insurance" placeholder="$0"
-                                        >
+                                    <input type="text" class="form-control" id="mortgage-insurance" placeholder="$0">
                                     <label for="mortgage-insurance">Mortgage Insurance (Monthly)</label>
                                 </div>
                                 <div class="form-floating mb-3">
@@ -279,8 +277,7 @@
                     <div class="calc-container">
                         <form action="" id="purchase-budget-form">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="income" placeholder="$57,000"
-                                    required>
+                                <input type="text" class="form-control" id="income" placeholder="$57,000" required>
                                 <label for="income">Yearly Income (Pretax)</label>
                             </div>
                             <div class="form-floating mb-3">
@@ -288,8 +285,7 @@
                                 <label for="debt">Monthly Debt (credit cards, car, etc)</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="budget-down" placeholder="$48,000"
-                                     required>
+                                <input type="text" class="form-control" id="budget-down" placeholder="$48,000" required>
                                 <label for="budget-down">Down Payment</label>
                             </div>
                             <div class="row">
@@ -315,8 +311,7 @@
                             </div>
 
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="budget-property-tax" placeholder="$4,000"
-                                    >
+                                <input type="text" class="form-control" id="budget-property-tax" placeholder="$4,000">
                                 <label for="budget-property-tax">Property Tax (Yearly)</label>
                                 <!-- 
                                     Store average property tax for states, counties, and cities in db to calculate this. Or pull from external source 
@@ -324,8 +319,7 @@
                                 -->
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="budget-home-insurance" placeholder="$1,050"
-                                    >
+                                <input type="text" class="form-control" id="budget-home-insurance" placeholder="$1,050">
                                 <label for="budget-home-insurance">Home Insurance (Yearly)</label>
                             </div>
                             <div class="form-floating mb-3">
@@ -486,7 +480,7 @@
                             <div id="compare-taxes-fees-container" class="d-none taxes-fees-container">
                                 <div class="form-floating mb-3">
                                     <input type="text" class="form-control" id="compare-property-tax"
-                                        placeholder="$4,000" >
+                                        placeholder="$4,000">
                                     <label for="compare-property-tax">Property Tax (Yearly)</label>
                                     <!-- 
                                         Store average property tax for states, counties, and cities in db  to calculate this. Or pull from external source 
@@ -566,15 +560,40 @@
             </div>
         </div>
     </div>
-    <!-- Start of LiveChat (www.livechat.com) code -->
-    <script>
-        window.__lc = window.__lc || {};
-        window.__lc.license = 14739771;
-        ; (function (n, t, c) { function i(n) { return e._h ? e._h.apply(null, n) : e._q.push(n) } var e = { _q: [], _h: null, _v: "2.0", on: function () { i(["on", c.call(arguments)]) }, once: function () { i(["once", c.call(arguments)]) }, off: function () { i(["off", c.call(arguments)]) }, get: function () { if (!e._h) throw new Error("[LiveChatWidget] You can't use getters before load."); return i(["get", c.call(arguments)]) }, call: function () { i(["call", c.call(arguments)]) }, init: function () { var n = t.createElement("script"); n.async = !0, n.type = "text/javascript", n.src = "https://cdn.livechatinc.com/tracking.js", t.head.appendChild(n) } }; !n.__lc.asyncInit && e.init(), n.LiveChatWidget = n.LiveChatWidget || e }(window, document, [].slice))
+    <script type="text/javascript" async src="https://cdn.reamaze.com/assets/reamaze.js"></script>
+    <script type="text/javascript">
+        var _support = _support || { 'ui': {}, 'user': {} };
+        _support['account'] = 'wiser-homebuyer';
+        _support['ui']['contactMode'] = 'mixed';
+        _support['ui']['enableKb'] = 'true';
+        _support['ui']['styles'] = {
+            widgetColor: 'rgba(16, 162, 197, 1)',
+            gradient: true,
+        };
+        _support['ui']['shoutboxFacesMode'] = 'default';
+        _support['ui']['shoutboxHeaderLogo'] = true;
+        _support['ui']['widget'] = {
+            displayOn: 'all',
+            fontSize: 'default',
+            allowBotProcessing: true,
+            label: {
+                text: 'Let us know if you have any questions! &#128522;',
+                mode: "notification",
+                delay: 3,
+                duration: 30,
+                primary: "I have a question",
+                secondary: "No, thanks",
+                sound: true,
+            },
+            position: 'bottom-right',
+            mobilePosition: 'bottom-right'
+        };
+        _support['apps'] = {
+            faq: { "enabled": true },
+            recentConversations: {},
+            orders: {}
+        };
     </script>
-    <noscript><a href="https://www.livechat.com/chat-with/14739771/" rel="nofollow">Chat with us</a>, powered by <a
-            href="https://www.livechat.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a></noscript>
-    <!-- End of LiveChat code -->
 </body>
 <script>
     // Create our number formatter.
