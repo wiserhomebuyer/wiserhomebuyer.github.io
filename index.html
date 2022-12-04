@@ -169,14 +169,14 @@
                         <form action="" id="monthly-payment-form">
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control comma" id="home-price" placeholder="$240,000"
-                                    required>
+                                    required value="0">
                                 <label for="home-price">Home Price</label>
                             </div>
                             <div class="row">
                                 <div class="col-7">
                                     <div class="form-floating mb-3">
                                         <input type="text" class="form-control" id="down-payment" placeholder="$48,000"
-                                            required>
+                                            required value="0">
                                         <label for="down-payment">Down Payment</label>
                                     </div>
                                 </div>
@@ -193,7 +193,7 @@
                                 <div class="col-7">
                                     <div class="form-floating mb-3">
                                         <select class="form-select" aria-label="Select loan-term" id="loan-term"
-                                            required>
+                                            required value="0">
                                             <option value="360" selected>30-yr fixed</option>
                                             <option value="240">20-yr fixed</option>
                                             <option value="180">15-yr fixed</option>
@@ -204,7 +204,7 @@
                                 <div class="col-5">
                                     <div class="mb-3 form-floating">
                                         <input type="text" class="form-control" id="interest-rate" placeholder="6.015%"
-                                            required>
+                                            required value="0">
                                         <label for="interest-rate">Interest Rate</label>
                                         <!-- People are likely coming to see what they can expect for an interest rate. We need to calculate this somehow. It looks like the others are calculating based on credit score -->
                                     </div>
@@ -277,22 +277,22 @@
                     <div class="calc-container">
                         <form action="" id="purchase-budget-form">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="income" placeholder="$57,000" required>
+                                <input type="text" class="form-control" id="income" placeholder="$57,000" required value="0">
                                 <label for="income">Yearly Income (Pretax)</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="debt" placeholder="$0" value="0" required>
+                                <input type="text" class="form-control" id="debt" placeholder="$0" value="0" required value="0">
                                 <label for="debt">Monthly Debt (credit cards, car, etc)</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="budget-down" placeholder="$48,000" required>
+                                <input type="text" class="form-control" id="budget-down" placeholder="$48,000" required value="0">
                                 <label for="budget-down">Down Payment</label>
                             </div>
                             <div class="row">
                                 <div class="col-7">
                                     <div class="form-floating mb-3">
                                         <select class="form-select" aria-label="Select budget-loan-term"
-                                            id="budget-loan-term" required>
+                                            id="budget-loan-term" required value="0">
                                             <option value="360" selected>30-yr fixed</option>
                                             <option value="240">20-yr fixed</option>
                                             <option value="180">15-yr fixed</option>
@@ -303,7 +303,7 @@
                                 <div class="col-5">
                                     <div class="mb-3 form-floating">
                                         <input type="text" class="form-control" id="budget-interest-rate"
-                                            placeholder="6.015%" required>
+                                            placeholder="6.015%" required value="0">
                                         <label for="budget-interest-rate">Interest Rate</label>
                                         <!-- People are likely coming to see what they can expect for an interest rate. We need to calculate this somehow. It looks like the others are calculating based on credit score -->
                                     </div>
@@ -400,7 +400,7 @@
                             <div class="d-flex align-items-center">
                                 <div>
                                     <div class="mb-3 form-floating">
-                                        <select class="form-select" aria-label="Select periods" id="min" required>
+                                        <select class="form-select" aria-label="Select periods" id="min" required value="0">
                                             <option selected>Select Min Price</option>
                                             <option value="100000">$100,000</option>
                                             <option value="200000">$200,000</option>
@@ -425,7 +425,7 @@
                                 <div>
                                     <div class="mb-3 form-floating">
                                         <!-- TODO: Disable numbers below min -->
-                                        <select class="form-select" aria-label="Select periods" id="max" required>
+                                        <select class="form-select" aria-label="Select periods" id="max" required value="0">
                                             <option selected>Select Min Price</option>
                                             <option value="100000">$100,000</option>
                                             <option value="200000">$200,000</option>
@@ -449,14 +449,14 @@
                             </div>
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="compare-down" placeholder="$48,000"
-                                    value="100000" required>
+                                    value="100000" required value="0">
                                 <label for="compare-down">Down Payment</label>
                             </div>
                             <div class="row">
                                 <div class="col-7">
                                     <div class="form-floating mb-3">
                                         <select class="form-select" aria-label="Select loan-term" id="compare-loan-term"
-                                            required>
+                                            required value="0">
                                             <option value="360" selected>30-yr fixed</option>
                                             <option value="240">20-yr fixed</option>
                                             <option value="180">15-yr fixed</option>
@@ -467,7 +467,7 @@
                                 <div class="col-5">
                                     <div class="mb-3 form-floating">
                                         <input type="text" class="form-control" id="compare-interest-rate"
-                                            placeholder="6.015%" required>
+                                            placeholder="6.015%" required value="0">
                                         <label for="interest-rate">Interest Rate</label>
                                     </div>
                                 </div>
