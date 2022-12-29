@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
     <!-- input number formatter -->
     <script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+    <script src="script.js"></script>
+
     <title>Wiser Homebuyer</title>
 
     <style>
@@ -213,13 +215,13 @@
 
                             <div class="form-check form-switch mb-3">
                                 <input class="form-check-input taxes-fees" type="checkbox" role="switch"
-                                    id="taxes-fees">
+                                    id="taxes-fees" value="0">
                                 <label class="form-check-label" for="taxes-fees">Include taxes & fees</label>
                             </div>
 
                             <div id="taxes-fees-container" class="d-none taxes-fees-container">
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="property-tax" placeholder="$4,000">
+                                    <input type="text" class="form-control" id="property-tax" placeholder="$4,000" value="0">
                                     <label for="property-tax">Property Tax (Yearly)</label>
                                     <!-- 
                                         Store average property tax for states, counties, and cities in db  to calculate this. Or pull from external source 
@@ -227,15 +229,15 @@
                                     -->
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="home-insurance" placeholder="$1,050">
+                                    <input type="text" class="form-control" id="home-insurance" placeholder="$1,050" value="0">
                                     <label for="home-insurance">Home Insurance (Yearly)</label>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="mortgage-insurance" placeholder="$0">
+                                    <input type="text" class="form-control" id="mortgage-insurance" placeholder="$0" value="0">
                                     <label for="mortgage-insurance">Mortgage Insurance (Monthly)</label>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="hoa" placeholder="$0">
+                                    <input type="text" class="form-control" id="hoa" placeholder="$0" value="0">
                                     <label for="hoa">Homeowners Association (Monthly)</label>
                                 </div>
                             </div>
@@ -281,7 +283,7 @@
                                 <label for="income">Yearly Income (Pretax)</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="debt" placeholder="$0" value="0" required value="0">
+                                <input type="text" class="form-control" id="debt" placeholder="$0" required value="0">
                                 <label for="debt">Monthly Debt (credit cards, car, etc)</label>
                             </div>
                             <div class="form-floating mb-3">
@@ -311,7 +313,7 @@
                             </div>
 
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="budget-property-tax" placeholder="$4,000">
+                                <input type="text" class="form-control" id="budget-property-tax" placeholder="$4,000" value="0">
                                 <label for="budget-property-tax">Property Tax (Yearly)</label>
                                 <!-- 
                                     Store average property tax for states, counties, and cities in db to calculate this. Or pull from external source 
@@ -319,7 +321,7 @@
                                 -->
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="budget-home-insurance" placeholder="$1,050">
+                                <input type="text" class="form-control" id="budget-home-insurance" placeholder="$1,050" value="0">
                                 <label for="budget-home-insurance">Home Insurance (Yearly)</label>
                             </div>
                             <div class="form-floating mb-3">
@@ -328,7 +330,7 @@
                                 <label for="budget-mortgage-insurance">Mortgage Insurance (Monthly)</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="budget-hoa" placeholder="$0">
+                                <input type="text" class="form-control" id="budget-hoa" placeholder="$0" value="0">
                                 <label for="budget-hoa">Homeowners Association (Monthly)</label>
                             </div>
                             <div class="d-grid gap-2">
@@ -560,9 +562,6 @@
             </div>
         </div>
     </div>
-    <!-- Start of HubSpot Embed Code -->
-  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na1.hs-scripts.com/23393352.js"></script>
-<!-- End of HubSpot Embed Code -->
 </body>
 <script>
     // Create our number formatter.
@@ -789,143 +788,9 @@
 
             $('#comp-head').empty().append($thead);
             $('#comp-body').empty().append($tbody);
-            // $('#comp').removeClass('d-none');
-            // $('#compare-form').addClass('d-none');
-
         });
 
     });
-
-    function convertToFloat(str) {
-        console.log(str);
-        return parseFloat(str.replaceAll(',', '').replaceAll('$', ''));
-    }
-
-    function calcMortgage(rate, periods, payment) {
-        return payment / rate * (1 - Math.pow(1 + rate, -periods));
-    }
-
-    function calcPayment(amount, rate, periods) {
-        let payment = (amount * (rate / (1 - Math.pow(1 + rate, -periods))));
-        return payment;
-    }
-
-    function calcTotalPayment(payment, tax, hins, mins, hoa) {
-        let total = payment + tax + hins + mins + hoa,
-            $totals = `
-                <div class="d-flex justify-content-between mb-3">
-                    <div>Loan</div>
-                    <div class="text-end" id="totals-loan">${formatter.format(payment)}</div>
-                </div>
-                <div class="d-flex justify-content-between mb-3">
-                    <div>Property Tax</div>
-                    <div class="text-end" id="totals-tax">${formatter.format(tax)}</div>
-                </div>
-                <div class="d-flex justify-content-between mb-3">
-                    <div>Home Insurance</div>
-                    <div class="text-end" id="totals-hins">${formatter.format(hins)}</div>
-                </div>
-                <div class="d-flex justify-content-between mb-3">
-                    <div>Mortgage Insurance</div>
-                    <div class="text-end" id="totals-mins">${formatter.format(mins)}</div>
-                </div>
-                <div class="d-flex justify-content-between mb-3">
-                    <div>Homeowners Association</div>
-                    <div class="text-end" id="totals-hoa">${formatter.format(hoa)}</div>
-                </div>
-                
-                <div class="d-flex justify-content-between pt-3 border-top fw-semibold">
-                    <div>Total Monthly Payment</div>
-                    <div class="text-end" id="totals-total">${formatter.format(total)}</div>
-                </div>
-            `;
-
-        return {
-            total: total,
-            totals: $totals
-        }
-    }
-
-    function createAmort(amount, rate, periods, payment) {
-        let totalInterest = 0,
-            balance = amount,
-            $schedule;
-
-        for (i = 1; i <= periods; i++) {
-            let beg = balance,
-                interest = (beg * rate),
-                principle = payment - interest,
-                end = beg - principle;
-
-            balance = end;
-            totalInterest += interest;
-            $schedule += '<tr>' +
-                '<td>' + i + '</td>' +
-                '<td>' + formatter.format(beg) + '</td>' +
-                '<td>' + formatter.format((principle + interest)) + '</td>' +
-                '<td>' + formatter.format(interest) + '</td>' +
-                '<td>' + formatter.format(principle) + '</td>' +
-                '<td>' + formatter.format(balance) + '</td>'
-            '</tr>';
-        }
-
-        return {
-            totalInterest: formatter.format(totalInterest),
-            percLoan: ((totalInterest / amount) * 100).toFixed(0) + `%`,
-            schedule: $schedule
-        };
-    }
-
-    function createPrices(min, max, increment) {
-        let c = min, prices = [min];
-        while (c < max) {
-            c += increment
-            prices.push(c);
-        }
-        if (!prices.indexOf(max)) {
-            prices.push(max);
-        }
-        return prices;
-    }
-
-    function createComparisons(prices, down, rate, taxRate, term, insurance, hoa) {
-        let comparisons = {},
-            iPmt = (insurance / 12),
-            hPmt = hoa,
-            mRate = ((rate / 100) / 12);
-
-        comparisons.price = [];
-        comparisons.down = [];
-        comparisons.mortgage = [];
-        comparisons.loanToValue = [];
-        comparisons.pmt = [];
-        comparisons.tPmt = [];
-        comparisons.iPmt = [];
-        comparisons.hPmt = [];
-        comparisons.total = [];
-        comparisons.totalPerGross = [];
-        comparisons.totalPerNet = [];
-
-        for (price of prices) {
-            let mortgage = (price - down),
-                loanToValue = ((Math.round((mortgage / price) * 100) / 100) * 100).toFixed(0),
-                pmt = calcPayment(mortgage, mRate, term),
-                tPmt = (taxRate / 12),
-                total = (pmt + tPmt + iPmt + hPmt);
-
-            comparisons.price.push(price);
-            comparisons.down.push(down);
-            comparisons.mortgage.push(mortgage);
-            comparisons.loanToValue.push(loanToValue);
-            comparisons.pmt.push(pmt);
-            comparisons.tPmt.push(tPmt);
-            comparisons.iPmt.push(iPmt);
-            comparisons.hPmt.push(hPmt);
-            comparisons.total.push(total);
-        }
-
-        return comparisons
-    }
 </script>
 
 </html>
