@@ -24,28 +24,33 @@
     <title>Wiser Homebuyer</title>
 
     <style>
-        .circle-btn {
-            height: 2rem;
-            width: 2rem;
+        .game-container {
             border: 1px solid #ddd;
-            border-radius: 50%;
-            margin: 2rem;
-            padding: 2rem;
-            background-color: #ddd;
+            border-radius: 1rem;
+            width: auto;
+            padding: 1rem;
+            margin: 1rem;
         }
-        .circle-btn.active {
-            background-color: green;
-            border-color: darken(green, 10%);
+
+        .circle-btn {
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            margin: 1rem;
+            padding: 2rem;
         }
     </style>
 </head>
 
 <body class="mb-5">
-    <div class="card">
-        <div class="d-flex justify-content-between">
-            <div class="circle-btn-container align-content-between">
-                <div class="circle-btn"></div>
-                <div class="circle-btn"></div>
+    <div class="game-container">
+        <div class="d-flex justify-content-center">
+            <div class="circle-btn-container d-flex align-content-between flex-column">
+                <button class="btn btn-outline-secondary circle-btn" disabled></button>
+                <div class="arrow-container text-center h2">
+                    <i class="bi bi-arrow-down-up"></i>
+                </div>
+                <button class="btn btn-success circle-btn"></button>
             </div>
         </div>
     </div>
@@ -53,7 +58,11 @@
 <script>
     
     $(function () {
-        
+        $('.circle-btn').click(function() {
+            let $this = $(this);
+            $this.closest('.circle-btn-container').find('.btn-outline-secondary').removeClass('btn-outline-secondary').addClass('btn-success').prop('disabled', false);
+            $this.removeClass('btn-success').addClass('btn-outline-secondary').prop('disabled', true);
+        });
 
     });
 </script>

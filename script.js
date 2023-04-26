@@ -130,18 +130,18 @@ let calc = {
         return comparisons
     },
 
-    compareRates: function () {
-        let amount = 500000,
-            periods = 30 * 12,
-            rate1 = (3.99 / 12) / 100,
-            rate2 = (2.99 / 12) / 100;
+    // compareRates: function () {
+    //     let amount = 500000,
+    //         periods = 30 * 12,
+    //         rate1 = (3.99 / 12) / 100,
+    //         rate2 = (2.99 / 12) / 100;
 
-        payment1 = this.calcPayment(amount, rate1, periods);
-        payment2 = this.calcPayment(amount, rate2, periods);
+    //     payment1 = this.calcPayment(amount, rate1, periods);
+    //     payment2 = this.calcPayment(amount, rate2, periods);
 
-        console.log({
-            payment1: payment1,
-            payment2: payment2
-        })
-    }
+    //     console.log({
+    //         payment1: payment1,
+    //         payment2: payment2
+    //     })
+    // }
 }

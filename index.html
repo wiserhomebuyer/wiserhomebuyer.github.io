@@ -162,6 +162,28 @@
                 </div>
             </div>
         </div>
+        <!-- <div class="row justify-content-center text-center mt-4">
+            <div class="col-6 col-sm-4">
+                <div class="feature" data-id="#compare-rate-container">
+                    <div class="feature-body">
+                        <div class="display-1">
+                            <i class="bi bi-percent"></i>
+                        </div>
+                        Compare Interest Rates
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4">
+                <div class="feature" data-id="#compare-rate-container">
+                    <div class="feature-body">
+                        <div class="display-1">
+                            <i class="bi bi-percent"></i>
+                        </div>
+                        Compare Interest Rates
+                    </div>
+                </div>
+            </div>
+        </div> -->
         <hr>
         <div class="row mt-4">
             <div class="feature-container active" id="monthly-payment-container">
@@ -177,8 +199,8 @@
                             <div class="row">
                                 <div class="col-7">
                                     <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" id="down-payment" placeholder="$48,000"
-                                            required value="0">
+                                        <input type="text" class="form-control down-payment" id="down-payment"
+                                            placeholder="$48,000" required value="0">
                                         <label for="down-payment">Down Payment</label>
                                     </div>
                                 </div>
@@ -194,8 +216,8 @@
                             <div class="row">
                                 <div class="col-7">
                                     <div class="form-floating mb-3">
-                                        <select class="form-select" aria-label="Select loan-term" id="loan-term"
-                                            required value="0">
+                                        <select class="form-select loan-term" aria-label="Select loan-term"
+                                            id="loan-term" required value="0">
                                             <option value="360" selected>30-yr fixed</option>
                                             <option value="300">25-yr fixed</option>
                                             <option value="240">20-yr fixed</option>
@@ -206,8 +228,8 @@
                                 </div>
                                 <div class="col-5">
                                     <div class="mb-3 form-floating">
-                                        <input type="text" class="form-control" id="interest-rate" placeholder="6.015%"
-                                            required value="0">
+                                        <input type="text" class="form-control interest-rate" id="interest-rate"
+                                            placeholder="6.015%" required value="0">
                                         <label for="interest-rate">Interest Rate</label>
                                         <!-- People are likely coming to see what they can expect for an interest rate. We need to calculate this somehow. It looks like the others are calculating based on credit score -->
                                     </div>
@@ -215,14 +237,15 @@
                             </div>
 
                             <div class="form-check form-switch mb-3">
-                                <input class="form-check-input taxes-fees" type="checkbox" role="switch"
-                                    id="taxes-fees" value="0">
+                                <input class="form-check-input taxes-fees" type="checkbox" role="switch" id="taxes-fees"
+                                    value="0">
                                 <label class="form-check-label" for="taxes-fees">Include taxes & fees</label>
                             </div>
 
                             <div id="taxes-fees-container" class="d-none taxes-fees-container">
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="property-tax" placeholder="$4,000" value="0">
+                                    <input type="text" class="form-control property-tax" id="property-tax"
+                                        placeholder="$4,000" value="0">
                                     <label for="property-tax">Property Tax (Yearly)</label>
                                     <!-- 
                                         Store average property tax for states, counties, and cities in db  to calculate this. Or pull from external source 
@@ -230,11 +253,13 @@
                                     -->
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="home-insurance" placeholder="$1,050" value="0">
+                                    <input type="text" class="form-control" id="home-insurance" placeholder="$1,050"
+                                        value="0">
                                     <label for="home-insurance">Home Insurance (Yearly)</label>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="mortgage-insurance" placeholder="$0" value="0">
+                                    <input type="text" class="form-control" id="mortgage-insurance" placeholder="$0"
+                                        value="0">
                                     <label for="mortgage-insurance">Mortgage Insurance (Monthly)</label>
                                 </div>
                                 <div class="form-floating mb-3">
@@ -280,7 +305,7 @@
                     <div class="calc-container">
                         <form action="" id="purchase-budget-form">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="income" placeholder="$57,000" required value="0">
+                                <input type="text" class="form-control" id="income" placeholder="$57,000" required>
                                 <label for="income">Yearly Income (Pretax)</label>
                             </div>
                             <div class="form-floating mb-3">
@@ -288,14 +313,15 @@
                                 <label for="debt">Monthly Debt (credit cards, car, etc)</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="budget-down" placeholder="$48,000" required value="0">
+                                <input type="text" class="form-control" id="budget-down" placeholder="$48,000" required
+                                    value="0">
                                 <label for="budget-down">Down Payment</label>
                             </div>
                             <div class="row">
                                 <div class="col-7">
                                     <div class="form-floating mb-3">
                                         <select class="form-select" aria-label="Select budget-loan-term"
-                                            id="budget-loan-term" required value="0">
+                                            id="budget-loan-term" required>
                                             <option value="360" selected>30-yr fixed</option>
                                             <option value="240">20-yr fixed</option>
                                             <option value="180">15-yr fixed</option>
@@ -306,7 +332,7 @@
                                 <div class="col-5">
                                     <div class="mb-3 form-floating">
                                         <input type="text" class="form-control" id="budget-interest-rate"
-                                            placeholder="6.015%" required value="0">
+                                            placeholder="6.015%" required>
                                         <label for="budget-interest-rate">Interest Rate</label>
                                         <!-- People are likely coming to see what they can expect for an interest rate. We need to calculate this somehow. It looks like the others are calculating based on credit score -->
                                     </div>
@@ -314,7 +340,8 @@
                             </div>
 
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="budget-property-tax" placeholder="$4,000" value="0">
+                                <input type="text" class="form-control" id="budget-property-tax" placeholder="$4,000"
+                                    value="0">
                                 <label for="budget-property-tax">Property Tax (Yearly)</label>
                                 <!-- 
                                     Store average property tax for states, counties, and cities in db to calculate this. Or pull from external source 
@@ -322,7 +349,8 @@
                                 -->
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="budget-home-insurance" placeholder="$1,050" value="0">
+                                <input type="text" class="form-control" id="budget-home-insurance" placeholder="$1,050"
+                                    value="0">
                                 <label for="budget-home-insurance">Home Insurance (Yearly)</label>
                             </div>
                             <div class="form-floating mb-3">
@@ -331,7 +359,7 @@
                                 <label for="budget-mortgage-insurance">Mortgage Insurance (Monthly)</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="budget-hoa" placeholder="$0" value="0">
+                                <input type="text" class="form-control" id="budget-hoa" placeholder="$0">
                                 <label for="budget-hoa">Homeowners Association (Monthly)</label>
                             </div>
                             <div class="d-grid gap-2">
@@ -403,13 +431,14 @@
                             <div class="d-flex align-items-center">
                                 <div>
                                     <div class="mb-3 form-floating">
-                                        <select class="form-select" aria-label="Select periods" id="min" required value="0">
+                                        <select class="form-select" aria-label="Select periods" id="min" required
+                                            value="0">
                                             <option selected>Select Min Price</option>
                                             <option value="100000">$100,000</option>
                                             <option value="200000">$200,000</option>
                                             <option value="300000">$300,000</option>
                                             <option value="400000">$400,000</option>
-                                            <option value="500000" selected>$500,000</option>
+                                            <option value="500000">$500,000</option>
                                             <option value="600000">$600,000</option>
                                             <option value="700000">$700,000</option>
                                             <option value="800000">$800,000</option>
@@ -428,7 +457,8 @@
                                 <div>
                                     <div class="mb-3 form-floating">
                                         <!-- TODO: Disable numbers below min -->
-                                        <select class="form-select" aria-label="Select periods" id="max" required value="0">
+                                        <select class="form-select" aria-label="Select periods" id="max" required
+                                            value="0">
                                             <option selected>Select Min Price</option>
                                             <option value="100000">$100,000</option>
                                             <option value="200000">$200,000</option>
@@ -439,7 +469,7 @@
                                             <option value="700000">$700,000</option>
                                             <option value="800000">$800,000</option>
                                             <option value="900000">$900,000</option>
-                                            <option value="1000000" selected>$1,000,000</option>
+                                            <option value="1000000">$1,000,000</option>
                                             <option value="1100000">$1,100,000</option>
                                             <option value="1200000">$1,200,000</option>
                                             <option value="1300000">$1,300,000</option>
@@ -452,14 +482,14 @@
                             </div>
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="compare-down" placeholder="$48,000"
-                                    value="100000" required value="0">
+                                    value="100000" required>
                                 <label for="compare-down">Down Payment</label>
                             </div>
                             <div class="row">
                                 <div class="col-7">
                                     <div class="form-floating mb-3">
                                         <select class="form-select" aria-label="Select loan-term" id="compare-loan-term"
-                                            required value="0">
+                                            required>
                                             <option value="360" selected>30-yr fixed</option>
                                             <option value="240">20-yr fixed</option>
                                             <option value="180">15-yr fixed</option>
@@ -470,7 +500,7 @@
                                 <div class="col-5">
                                     <div class="mb-3 form-floating">
                                         <input type="text" class="form-control" id="compare-interest-rate"
-                                            placeholder="6.015%" required value="0">
+                                            placeholder="6.015%" value="0" required>
                                         <label for="interest-rate">Interest Rate</label>
                                     </div>
                                 </div>
@@ -501,8 +531,7 @@
                                     <label for="compare-mortgage-insurance">Mortgage Insurance (Monthly)</label>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="compare-hoa" placeholder="$0"
-                                        value="0">
+                                    <input type="text" class="form-control" id="compare-hoa" placeholder="$0" value="0">
                                     <label for="compare-hoa">Homeowners Association (Monthly)</label>
                                 </div>
                             </div>
@@ -518,6 +547,15 @@
                             <tbody id="comp-body" class="text-end"></tbody>
                         </table>
                     </div>
+                </div>
+            </div>
+            <div class="feature-container" id="compare-rates-container">
+                <h3>Compare Interest Rates</h3>
+                <p>Compare interest rates to see how different interest rates affect your monthly payment</p>
+                <div class="calc-container">
+                    <form action="" id="compare-rates">
+
+                    </form>
                 </div>
             </div>
         </div>
@@ -573,11 +611,23 @@
     });
 
     // Enable tooltips
-    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 
+    // calc.compareRates();
 
     $(function () {
+        // Set default values
+        let price = 0,
+            down = 0,
+            loan = 0,
+            term = 0,
+            rate = 0,
+            hIns = 0,
+            hoa = 0,
+            tax = 0,
+            mIns = 0;
+
         // Add commas to inputs
         AutoNumeric.multiple([
             '#home-price',
@@ -617,8 +667,8 @@
 
         // Handle down payemnt calculation
         $('#down-payment').on('keypress keydown change', function () {
-            let price = convertToFloat($('#home-price').val().replaceAll(',', '')),
-                down = convertToFloat($(this).val().replaceAll(',', '')),
+            let price = calc.convertToFloat($('#home-price').val().replaceAll(',', '')),
+                down = calc.convertToFloat($(this).val().replaceAll(',', '')),
                 perc = down > 0 ? ((down / price) * 100).toFixed(0) : 0;
 
             $('#down-payment-percentage').val(perc);
@@ -626,8 +676,8 @@
 
         // Calculate down as a percentage
         $('#down-payment-percentage').on('change', function () {
-            let price = convertToFloat($('#home-price').val().replaceAll(',', '')),
-                perc = convertToFloat($(this).val().replaceAll(',', '')),
+            let price = calc.convertToFloat($('#home-price').val().replaceAll(',', '')),
+                perc = calc.convertToFloat($(this).val().replaceAll(',', '')),
                 down = perc > 0 ? ((perc * price) / 100).toFixed(0) : 0;
 
             $('#down-payment').val(down);
@@ -648,19 +698,24 @@
         // Do the calculation 
         $('#monthly-payment-form').submit(function (e) {
             e.preventDefault();
-            let amount = (convertToFloat($('#home-price').val()) - convertToFloat($('#down-payment').val())),
-                rate = ((convertToFloat($('#interest-rate').val()) / 100) / 12),
-                periods = parseInt($('#loan-term').val()),
-                tax = (convertToFloat($('#property-tax').val()) / 12),
-                hins = (convertToFloat($('#home-insurance').val()) / 12),
-                mins = convertToFloat($('#mortgage-insurance').val()),
-                hoa = convertToFloat($('#hoa').val()),
-                payment = calcPayment(amount, rate, periods),
-                amort = createAmort(amount, rate, periods, payment);
+
+            // Set defaults
+            price = calc.convertToFloat($('#home-price').val());
+            down = calc.convertToFloat($('#down-payment').val());
+            loan = (price - down);
+            rate = ((calc.convertToFloat($('#interest-rate').val()) / 100) / 12);
+            term = parseInt($('#loan-term').val());
+            tax = (calc.convertToFloat($('#property-tax').val()) / 12);
+            hIns = (calc.convertToFloat($('#home-insurance').val()) / 12);
+            mIns = calc.convertToFloat($('#mortgage-insurance').val());
+            hoa = calc.convertToFloat($('#hoa').val());
+
+            let payment = calc.calcPayment(loan, rate, term),
+                amort = calc.createAmort(loan, rate, term, payment);
 
 
             if ($('#taxes-fees').prop('checked') == true) {
-                let totals = calcTotalPayment(payment, tax, hins, mins, hoa);
+                let totals = calc.calcTotalPayment(payment, tax, hIns, mIns, hoa);
                 payment = totals.total;
                 $('#payment-details-content').empty().append(totals.totals)
                 $('#payment-details-container').removeClass('d-none');
@@ -678,21 +733,21 @@
         // Calculate Purchase Budget
         $('#purchase-budget-form').submit(function (e) {
             e.preventDefault();
-            let income = (convertToFloat($('#income').val()) / 12),
-                debt = (convertToFloat($('#debt').val())),
-                down = (convertToFloat($('#budget-down').val())),
-                rate = ((convertToFloat($('#budget-interest-rate').val()) / 100) / 12),
+            let income = (calc.convertToFloat($('#income').val()) / 12),
+                debt = (calc.convertToFloat($('#debt').val())),
+                down = (calc.convertToFloat($('#budget-down').val())),
+                rate = ((calc.convertToFloat($('#budget-interest-rate').val()) / 100) / 12),
                 periods = parseInt($('#budget-loan-term').val()),
-                tax = (convertToFloat($('#budget-property-tax').val()) / 12),
-                hins = (convertToFloat($('#budget-home-insurance').val()) / 12),
-                mins = convertToFloat($('#budget-mortgage-insurance').val()),
-                hoa = convertToFloat($('#budget-hoa').val()),
+                tax = (calc.convertToFloat($('#budget-property-tax').val()) / 12),
+                hins = (calc.convertToFloat($('#budget-home-insurance').val()) / 12),
+                mins = calc.convertToFloat($('#budget-mortgage-insurance').val()),
+                hoa = calc.convertToFloat($('#budget-hoa').val()),
                 dir = 0.36,
                 maxDebt = (income * dir),
                 maxPayment = (maxDebt - debt - tax - hins - mins - hoa),
-                mortgage = calcMortgage(rate, periods, maxPayment),
+                mortgage = calc.calcMortgage(rate, periods, maxPayment),
                 budget = (mortgage + down),
-                totals = calcTotalPayment(maxPayment, tax, hins, mins, hoa);
+                totals = calc.calcTotalPayment(maxPayment, tax, hins, mins, hoa);
 
             $('#budget').text(formatter.format(budget));
             $('#mortgage').text(formatter.format(mortgage));
@@ -703,18 +758,18 @@
 
         $('#compare-form').submit(function (e) {
             e.preventDefault();
-            let max = convertToFloat($('#max').val()),
-                min = convertToFloat($('#min').val()),
+            let max = calc.convertToFloat($('#max').val()),
+                min = calc.convertToFloat($('#min').val()),
                 increment = 100000,
-                prices = createPrices(min, max, increment),
-                down = convertToFloat($('#compare-down').val()),
-                rate = convertToFloat($('#compare-interest-rate').val()),
-                term = convertToFloat($('#compare-loan-term').val()),
-                taxRate = convertToFloat($('#compare-property-tax').val()),
-                hIns = convertToFloat($('#compare-home-insurance').val()),
-                mIns = convertToFloat($('#compare-mortgage-insurance').val()),
-                hoa = convertToFloat($('#compare-hoa').val()),
-                comparisons = createComparisons(prices, down, rate, taxRate, term, hIns, hoa),
+                prices = calc.createPrices(min, max, increment),
+                down = calc.convertToFloat($('#compare-down').val()),
+                rate = calc.convertToFloat($('#compare-interest-rate').val()),
+                term = calc.convertToFloat($('#compare-loan-term').val()),
+                taxRate = calc.convertToFloat($('#compare-property-tax').val()),
+                hIns = calc.convertToFloat($('#compare-home-insurance').val()),
+                mIns = calc.convertToFloat($('#compare-mortgage-insurance').val()),
+                hoa = calc.convertToFloat($('#compare-hoa').val()),
+                comparisons = calc.createComparisons(prices, down, rate, taxRate, term, hIns, hoa),
                 $thead = `<tr><td>Price</td>`,
                 $tbody = `<tr>`;
 
