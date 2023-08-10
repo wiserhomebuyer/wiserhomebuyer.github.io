@@ -637,7 +637,7 @@
             '#property-tax',
             '#mortgage-insurance',
             '#budget-down',
-            '#income',
+            // '#income',
             '#debt',
             '#budget-property-tax',
             '#budget-home-insurance',
@@ -733,6 +733,7 @@
         // Calculate Purchase Budget
         $('#purchase-budget-form').submit(function (e) {
             e.preventDefault();
+            console.log('here');
             let income = (calc.convertToFloat($('#income').val()) / 12),
                 debt = (calc.convertToFloat($('#debt').val())),
                 down = (calc.convertToFloat($('#budget-down').val())),
