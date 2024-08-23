@@ -486,7 +486,7 @@
                             </div>
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="compare-down" placeholder="$48,000"
-                                    value="100000" required>
+                                    required>
                                 <label for="compare-down">Down Payment</label>
                             </div>
                             <div class="row">
@@ -756,10 +756,10 @@
                     mortgage = calc.calcMortgage(rate, periods, maxPayment),
                     budget = (mortgage + down),
                     totals = calc.calcTotalPayment(maxPayment, tax, hins, mins, hoa);
-    
+
                 $('#budget').text(formatter.format(budget));
                 $('#mortgage').text(formatter.format(mortgage));
-    
+
                 $('#budget-payment-details-content').empty().append(totals.totals)
                 $('#budget-payment-details-container').removeClass('d-none');
             }
@@ -783,76 +783,76 @@
                     comparisons = calc.createComparisons(prices, down, rate, taxRate, term, hIns, hoa),
                     $thead = `<tr><td>Price</td>`,
                     $tbody = `<tr>`;
-    
+
                 for (price of comparisons.price) {
                     $thead += `<td>${formatter.format(price)}</td>`;
                 }
-    
+
                 $thead += `</tr>`;
                 $tbody += `</tr>`;
-    
+
                 $tbody += `<tr><th class="text-start">Down Payment</th>`;
-    
+
                 for (down of comparisons.down) {
                     $tbody += `<td>${formatter.format(down)}</td>`;
                 }
-    
+
                 $tbody += `</tr>`;
-    
+
                 $tbody += `<tr><th class="text-start">Mortgage</th>`;
-    
+
                 for (mortgage of comparisons.mortgage) {
                     $tbody += `<td>${formatter.format(mortgage)}</td>`;
                 }
-    
+
                 $tbody += `</tr>`;
                 $tbody += `<tr><th class="text-start">Loan to Value</th>`;
-    
+
                 for (loanToValue of comparisons.loanToValue) {
                     $tbody += `<td>${loanToValue}%</td>`;
                 }
-    
+
                 $tbody += `</tr>`;
                 $tbody += `<tr><th class="text-start">Mortgage Payment</th>`;
-    
+
                 for (pmt of comparisons.pmt) {
                     $tbody += `<td>${formatter.format(pmt)}</td>`;
                 }
-    
+
                 $tbody += `</tr>`;
-    
-    
+
+
                 $tbody += `<tr><th class="text-start">Property Tax</th>`;
-    
+
                 for (tPmt of comparisons.tPmt) {
                     $tbody += `<td>${formatter.format(tPmt)}</td>`;
                 }
-    
+
                 $tbody += `</tr>`;
-    
+
                 $tbody += `<tr><th class="text-start">Home Insurance</th>`;
-    
+
                 for (iPmt of comparisons.iPmt) {
                     $tbody += `<td>${formatter.format(iPmt)}</td>`;
                 }
-    
+
                 $tbody += `</tr>`;
-    
+
                 $tbody += `<tr><th class="text-start">HOA</th>`;
-    
+
                 for (hPmt of comparisons.hPmt) {
                     $tbody += `<td>${formatter.format(hPmt)}</td>`;
                 }
-    
+
                 $tbody += `</tr>`;
                 $tbody += `<tr class=""><th class="text-start table-group-divider">Total Monthly Payment</th>`;
-    
+
                 for (total of comparisons.total) {
                     $tbody += `<td>${formatter.format(total)}</td>`;
                 }
-    
+
                 $tbody += `</tr>`;
-    
+
                 $('#comp-head').empty().append($thead);
                 $('#comp-body').empty().append($tbody);
             }
