@@ -1,16 +1,18 @@
 let calc = {
 
     convertToFloat: function (str) {
+        str = !str ? '0' : str;
         return parseFloat(str.replaceAll(',', '').replaceAll('$', ''));
     },
 
     calcMortgage: function (rate, periods, payment) {
-        return payment / rate * (1 - Math.pow(1 + rate, -periods));
+        let mortgage = payment / rate * (1 - Math.pow(1 + rate, -periods));
+        return mortgage > 0 ? mortgage : 0;
     },
 
     calcPayment: function (amount, rate, periods) {
         let payment = (amount * (rate / (1 - Math.pow(1 + rate, -periods))));
-        return payment;
+        return payment > 0 ? payment : 0;
     },
 
     calcTotalPayment: function (payment, tax, hins, mins, hoa) {

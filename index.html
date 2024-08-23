@@ -337,25 +337,36 @@
                                 </div>
                             </div>
 
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="budget-property-tax" placeholder="$4,000">
-                                <label for="budget-property-tax">Property Tax (Yearly)</label>
-                                <!-- 
-                                    Store average property tax for states, counties, and cities in db to calculate this. Or pull from external source 
-                                    Property taxes likely change yearly
-                                -->
+                            <div class="form-check form-switch mb-3">
+                                <input class="form-check-input taxes-fees" type="checkbox" role="switch"
+                                    id="taxes-fees">
+                                <label class="form-check-label" for="taxes-fees">Include taxes & fees</label>
                             </div>
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="budget-home-insurance" placeholder="$1,050">
-                                <label for="budget-home-insurance">Home Insurance (Yearly)</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="budget-mortgage-insurance" placeholder="$0">
-                                <label for="budget-mortgage-insurance">Mortgage Insurance (Monthly)</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="budget-hoa" placeholder="$0">
-                                <label for="budget-hoa">Homeowners Association (Monthly)</label>
+
+                            <div id="budget-taxes-fees-container" class="d-none taxes-fees-container">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="budget-property-tax"
+                                        placeholder="$4,000">
+                                    <label for="budget-property-tax">Property Tax (Yearly)</label>
+                                    <!-- 
+                                        Store average property tax for states, counties, and cities in db  to calculate this. Or pull from external source 
+                                        Property taxes likely change yearly
+                                    -->
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="budget-home-insurance"
+                                        placeholder="$1,050">
+                                    <label for="budget-home-insurance">Home Insurance (Yearly)</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="budget-mortgage-insurance"
+                                        placeholder="$0">
+                                    <label for="budget-mortgage-insurance">Mortgage Insurance (Monthly)</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="budget-hoa" placeholder="$0">
+                                    <label for="budget-hoa">Homeowners Association (Monthly)</label>
+                                </div>
                             </div>
                             <div class="d-grid gap-2">
                                 <button type="submit" class="btn btn-primary">Calculate Purchase
@@ -623,32 +634,32 @@
             mIns = 0;
 
         // Add commas to inputs
-        AutoNumeric.multiple([
-            '#home-price',
-            '#down-payment',
-            '#home-insurance',
-            '#hoa',
-            '#property-tax',
-            '#mortgage-insurance',
-            '#budget-down',
-            // '#income',
-            '#debt',
-            '#budget-property-tax',
-            '#budget-home-insurance',
-            '#budget-mortgage-insurance',
-            '#budget-hoa',
+        // AutoNumeric.multiple([
+        //     '#home-price',
+        //     '#down-payment',
+        //     '#home-insurance',
+        //     '#hoa',
+        //     '#property-tax',
+        //     '#mortgage-insurance',
+        //     '#budget-down',
+        //     // '#income',
+        //     '#debt',
+        //     '#budget-property-tax',
+        //     '#budget-home-insurance',
+        //     '#budget-mortgage-insurance',
+        //     '#budget-hoa',
 
-            '#compare-home-insurance',
-            '#compare-hoa',
-            '#compare-property-tax',
-            '#compare-mortgage-insurance',
-            '#compare-down'
-        ], {
-            allowDecimalPadding: false,
-            decimalPlaces: 0,
-            watchExternalChanges: true,
-            currencySymbol: '$'
-        });
+        //     '#compare-home-insurance',
+        //     '#compare-hoa',
+        //     '#compare-property-tax',
+        //     '#compare-mortgage-insurance',
+        //     '#compare-down'
+        // ], {
+        //     allowDecimalPadding: false,
+        //     decimalPlaces: 0,
+        //     watchExternalChanges: true,
+        //     currencySymbol: '$'
+        // });
 
         // Toggle between calculators
         $('.feature').click(function () {
@@ -692,6 +703,7 @@
         // Do the calculation 
         $('#monthly-payment-form').submit(function (e) {
             if (this[0].checkValidity()) {
+                console.log('true');
                 e.preventDefault();
 
                 // Set defaults
@@ -723,7 +735,6 @@
                 $('#amort-btn-container').removeClass('d-none');
                 $('#amort-body').empty().append(amort.schedule);
             }
-
         });
 
         // Calculate Purchase Budget
